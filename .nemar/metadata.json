@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "EEG Moments Dataset (EMD)",
-  "description": "The EEG Moments Dataset (EMD) provides EEG responses from 6 human subjects to 1,102 naturalistic 3-second videos with audio, serving as the EEG companion to the BOLD Moments Dataset (BMD) fMRI dataset. Each subject viewed a 1,000-video training set 6 times and a 102-video testing set 24 times, with concurrent eye-tracking (gaze and pupil size) recorded during central fixation. Videos are annotated with object, scene, and action labels, textual descriptions, spoken transcriptions, and memorability scores, enabling multimodal analyses of visual and auditory naturalistic event processing.",
-  "methods_description": "EEG and eye-tracking (gaze and pupil size) data were collected while subjects viewed 1,102 3-second videos with audio, maintaining central fixation. Subjects saw a 1,000-video training set 6 times and a 102-video testing set 24 times, across multiple sessions and runs.",
+  "description": "The EEG Moments Dataset (EMD) contains EEG responses from 6 human subjects viewing 1,102 naturalistic 3-second videos presented with their audio tracks. Each subject viewed the 1,000-video training set 6 times and the 102-video testing set 24 times. Eye tracking data (gaze and pupil size) were recorded during the experiment. The videos carry human annotations for objects, scenes, actions, sentence descriptions, spoken transcriptions, and memorability. EMD is the EEG companion to the BOLD Moments fMRI dataset.",
+  "methods_description": "Raw EEG and simultaneous eye-tracking data were recorded over multiple sessions while subjects maintained central fixation during presentation of 3-second videos with audio. Subjects saw the training videos 6 times and the test videos 24 times. Data are provided in BIDS format, along with preprocessed EEG and eye-tracking derivatives and stimulus metadata.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -22,19 +22,20 @@
       "term": "eye tracking"
     },
     {
-      "term": "naturalistic stimuli"
+      "term": "naturalistic videos"
     },
     {
-      "term": "video perception"
+      "term": "Visual Perception",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D014796"
+    },
+    {
+      "term": "Auditory Perception",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D001307"
     },
     {
       "term": "memorability"
-    },
-    {
-      "term": "BIDS"
-    },
-    {
-      "term": "audiovisual processing"
     }
   ],
   "related_identifiers": [
