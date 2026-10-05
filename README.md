@@ -34,7 +34,11 @@ The `./derivatives/` folder contains all data derivatives, including the stimulu
 - **Session 7:**
     - **Run 16:** The EEG recording only contains the first 64 (out of 66) video trials.
 
-### 👁️ Missing eye tracking data 
+### 👁️ Missing/Bad eye tracking data
+
+#### Subject 3
+
+- Subject 3 exhibited more substantial eye movements, which the source authors attribute as likely to calibration difficulties associated with wearing glasses rather than actual eye movements per se. 
 
 #### Subject 4
 
@@ -69,7 +73,7 @@ For any question regarding the EEG Moments Dataset, you can get in touch with Al
 
 If you use EMD's data, please cite the paper:
 
-> * Gifford AT, Oyarzo P, Zonneveld AW, Sartzetaki C, Groen IIA, Cichy RM. 2026. !!!TITLE!!!. _arXiv_. DOI: [!!!!!!!!!!!!!!!!!!][paper_emd]
+> * Gifford AT, Oyarzo P, Zonneveld AW, Sartzetaki C, Groen IIA, Cichy RM. 2026. A large dataset of human EEG responses to short naturalistic videos for studying dynamic visual event processing. _arXiv_. DOI: [https://doi.org/10.48550/arXiv.2608.28768][paper_emd]
 
 If you use EMD's stimuli or stimulus metadata, please also cite the paper:
 
@@ -77,7 +81,12 @@ If you use EMD's stimuli or stimulus metadata, please also cite the paper:
 
 
 
-[paper_emd]: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[paper_emd]: https://doi.org/10.48550/arXiv.2608.28768
 [paper_bmd]: https://doi.org/10.1038/s41467-024-50310-3
 [github]: https://github.com/gifale95/EMD
 [colab]: https://colab.research.google.com/drive/1Z5MDo8yy3sucggLQ4SMETtud2E1igRE9?usp=drive_link
+
+
+## Metadata reuse and source-version notes
+
+See [REUSE_METADATA.md](REUSE_METADATA.md) for stimulus joins, annotation provenance, known metadata caveats, and stimulus-access restrictions. This metadata-only enrichment does not change the archived recordings or their source release.
