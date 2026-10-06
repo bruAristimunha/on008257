@@ -79,6 +79,30 @@ metadata should reference these existing source assets rather than silently
 relicense or redistribute them. Derived features also require a separate rights
 assessment; transformation alone does not establish redistribution permission.
 
+## Channel status (`*_channels.tsv`)
+
+The source release has no `channels.tsv`. This enrichment adds one per EEG run
+(768 files) with `name`, `type`, `units` and `status`, in the order of the
+BrainVision header (127 channels, µV, as recorded). Channel names, order and units
+were checked against the headers. Nothing in the recordings is changed:
+`status` only flags channels; no channel is dropped, interpolated or rescaled.
+
+88 channel-runs in 74 runs are `bad` under rule `emd-bads-v1`, judged over the
+trial windows of each run:
+
+- `extreme_dc_offset`: |raw| >= 0.25 V in >= 50% of in-trial samples. Channel
+  offsets form a clear gap: almost all are below 0.053 V and none lie between
+  0.2 and 0.3 V.
+- `high_variance`: robust std after a 0.1-45 Hz filter > 5x the run's median
+  channel, and > 5x the median in >= 50% of trials.
+- `flat` (std < 0.1 µV after filtering) was tested and matched no channel.
+
+Most flags are session-long electrode problems: C1 in sub-05 ses-08 and sub-06
+ses-06 (all 16 runs), C1 and P6 in sub-06 ses-01, C1 in sub-04 ses-08 runs
+10-16. Per channel: C1 51, P6 11, AFp2 4, FTT10h 4, others fewer. The reason is
+in `status_description`. Brief artifacts (blinks, eye movements, short
+excursions) are not flagged; handle them per analysis.
+
 ## References
 
 - https://doi.org/10.48550/arXiv.2608.28768
