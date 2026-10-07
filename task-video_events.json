@@ -13,7 +13,7 @@
     },
     "stim_id": {
         "LongName": "Stimulus ID",
-        "Description": "Index indicating the number ID of the presented video. Stimuli with stim_id in the range [1, 1000] belong to the training split, and stimuli with stim_id in the range [1001, 1102] belong to the test split."
+        "Description": "Index indicating the number ID of the presented video. Stimuli with stim_id in the range [1, 1000] belong to the training split, and stimuli with stim_id in the range [1001, 1102] belong to the test split. Joins stim_id in stimuli/stimuli.tsv (one row per video)."
     },
     "is_task": {
         "Description": "Whether the trial required an active behavioral response",

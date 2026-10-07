@@ -3,3 +3,4 @@
 *_physioevents.tsv.gz
 *_physioevents.json
 .nemar/
+REUSE_METADATA.md

@@ -90,3 +90,26 @@ If you use EMD's stimuli or stimulus metadata, please also cite the paper:
 ## Metadata reuse and source-version notes
 
 See [REUSE_METADATA.md](REUSE_METADATA.md) for stimulus joins, annotation provenance, known metadata caveats, and stimulus-access restrictions. This metadata-only enrichment does not change the archived recordings or their source release.
+
+## Stimuli (metadata only)
+
+No video is included in this dataset. The 1,102 videos are the stimulus set of the BOLD Moments Dataset (BMD; Lahner et al.
+2024, https://doi.org/10.1038/s41467-024-50310-3), 3-second clips that derive from Moments in Time. They belong to third
+parties. Obtain them from the official BMD page https://boldmomentsdataset.csail.mit.edu/stimuli_metadata after accepting its
+terms (non-commercial research and education only; no redistribution of videos, images, tags or text). See also
+`stimuli/stimuli_download.txt`.
+
+`stimuli/stimuli.tsv` has one row per `stim_id` (the integer in every `*_events.tsv`; 1-1000 train, 1001-1102 test):
+duration, frame rate, size, frame count, audio track and SHA-256 of the BMD `stimulus_set` MP4 (H.264) file with that number,
+so you can check your own copy. Over the 1,102 files: 268 x 268 pixels; 3.00-3.11 s; 30 fps (823 files), 24 (146),
+25 (84), 15 (30), other rates (19).
+
+Known issue: none of the 1,102 BMD MP4 files has an audio track, while EMD presented the videos with their audio (see
+above). The audio heard in the experiment therefore came from another version of each clip, and the SHA-256 identifies the
+BMD file, not necessarily the exact presentation file. 34 videos have no audio at all
+(`derivatives/stimuli_metadata/videos_with_no_audio.csv`).
+
+Join: `stim_id` in the events = `stim_id` in `stimuli/stimuli.tsv` = BMD video number = the zero-padded keys of
+`derivatives/stimuli_metadata/annotations.json`.
+
+Added 2026-10-08 (metadata enrichment, see CHANGES). Properties were measured on the files obtained under the BMD terms.

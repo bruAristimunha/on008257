@@ -26,5 +26,12 @@
       "DOI": "doi:10.18112/openneuro.ds008257.v1.0.0"
     }
   ],
-  "Version": "1.0.0"
+  "Version": "1.0.0",
+  "GeneratedBy": [
+    {
+      "Name": "NeuralBench video-stimulus metadata enrichment",
+      "Version": "2026-10-08",
+      "Description": "Metadata only, no media files: stimulus table (stimuli/stimuli.tsv), README section 'Stimuli' and the changes listed in CHANGES under 2026-10-08. Facts and sources are in the README section. Prepared by Bruno Aristimunha (NeuralBench video work); the videos stay with their rights holders."
+    }
+  ]
 }

@@ -1,2 +1,9 @@
+Metadata update 2026-10-08
+  - Added stimuli/stimuli.tsv and stimuli.json: one row per stim_id with properties and SHA-256 of the BMD stimulus_set MP4 file of the same number (no media added).
+  - README: section 'Stimuli' (how to obtain the BMD videos, join, missing audio track in the BMD MP4 files).
+  - task-video_events.json: stim_id joins stimuli/stimuli.tsv.
+  - .bidsignore: REUSE_METADATA.md (not a BIDS file; validator NOT_INCLUDED error).
+  - dataset_description.json: GeneratedBy entry for this enrichment.
+
 1.0.0 2026-08-26
   - Dataset upload

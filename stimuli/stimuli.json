@@ -1,0 +1,60 @@
+{
+  "stim_id": {
+    "Description": "Stimulus identifier; the value used to join events (see README, section Stimuli)."
+  },
+  "split": {
+    "Description": "Native split of the source dataset.",
+    "Levels": {
+      "train": "stim_id 1-1000",
+      "test": "stim_id 1001-1102"
+    }
+  },
+  "source_title": {
+    "Description": "Title of the source work or upload."
+  },
+  "source_id": {
+    "Description": "Identifier of the source (YouTube id, archive or deposit identifier, clip name)."
+  },
+  "source_url": {
+    "Description": "Where the source can be obtained (official page, upload or deposit). Not a copy made by us."
+  },
+  "rights": {
+    "Description": "Rights note. 'third-party; not included': the video belongs to its rights holder and is not part of this dataset."
+  },
+  "duration_s": {
+    "Description": "Duration of the presented version.",
+    "Units": "s"
+  },
+  "fps": {
+    "Description": "Frame rate of the file described by sha256 (ffprobe).",
+    "Units": "Hz"
+  },
+  "width": {
+    "Description": "Frame width of the file described by sha256 (ffprobe).",
+    "Units": "pixel"
+  },
+  "height": {
+    "Description": "Frame height of the file described by sha256 (ffprobe).",
+    "Units": "pixel"
+  },
+  "n_frames": {
+    "Description": "Number of video frames of the file described by sha256 (ffprobe packet count)."
+  },
+  "audio": {
+    "Description": "yes if the file described by sha256 has an audio stream."
+  },
+  "sha256": {
+    "Description": "SHA-256 of the file named in verification, so a user can check an own copy. n/a when no byte-identical presentation file is known."
+  },
+  "verification": {
+    "Description": "How identity and timing were checked."
+  },
+  "confidence": {
+    "Description": "Confidence in identity and timing.",
+    "Levels": {
+      "verified": "identity and timing checked against data or files of this dataset",
+      "likely": "identity verified, timing from one anchor, or two independent anchors agree",
+      "unknown": "not checked or not resolvable from public material"
+    }
+  }
+}
