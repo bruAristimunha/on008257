@@ -1,9 +1,14 @@
-Metadata update 2026-10-08
+1.0.1 2026-10-14
   - Added stimuli/stimuli.tsv and stimuli.json: one row per stim_id with properties and SHA-256 of the BMD stimulus_set MP4 file of the same number (no media added).
-  - README: section 'Stimuli' (how to obtain the BMD videos, join, missing audio track in the BMD MP4 files).
+  - README: section 'Stimuli' (how to obtain the BMD videos, join, missing audio track in the BMD MP4 files); the presented audio most likely came from another version of each clip, labelled as an inference).
   - task-video_events.json: stim_id joins stimuli/stimuli.tsv.
   - .bidsignore: REUSE_METADATA.md (not a BIDS file; validator NOT_INCLUDED error).
   - dataset_description.json: GeneratedBy entry for this enrichment.
+  - dataset_description.json: HowToAcknowledge and the 'Paper' entry of ReferencesAndLinks, which held '?' placeholders, now give the EMD paper (Gifford et al. 2026, arXiv doi:10.48550/arXiv.2608.28768), as in upstream OpenNeuro ds008257 1.0.1.
+  - README: the EMD citation (title and DOI placeholders filled), the subject-3 eye-tracking calibration note of upstream 1.0.1, a pointer to REUSE_METADATA.md.
+  - Added REUSE_METADATA.md: source and archive identity (recordings unchanged from OpenNeuro 1.0.0; upstream 1.0.1 changes only CHANGES, README and dataset_description.json), event-stimulus join, annotation provenance, caveats, stimulus access, channel status.
+  - Added one *_channels.tsv per EEG run (768 files; the source has none): name, type, units, status, status_description in BrainVision header order; 88 channel-runs in 74 runs marked bad under rule emd-bads-v1 (see REUSE_METADATA.md).
+  - dataset_description.json: Version 1.0.0 -> 1.0.1.
 
 1.0.0 2026-08-26
   - Dataset upload

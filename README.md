@@ -105,7 +105,8 @@ so you can check your own copy. Over the 1,102 files: 268 x 268 pixels; 3.00-3.1
 25 (84), 15 (30), other rates (19).
 
 Known issue: none of the 1,102 BMD MP4 files has an audio track, while EMD presented the videos with their audio (see
-above). The audio heard in the experiment therefore came from another version of each clip, and the SHA-256 identifies the
+above). The audio heard in the experiment therefore most likely came from another version of each clip (an inference from
+the missing audio tracks, not stated by the authors), and the SHA-256 identifies the
 BMD file, not necessarily the exact presentation file. 34 videos have no audio at all
 (`derivatives/stimuli_metadata/videos_with_no_audio.csv`).
 
