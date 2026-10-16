@@ -57,10 +57,13 @@ synchronization information. Coordinates are pixels and pupil area is in arbitra
 units. Subject 3 has the upstream calibration caveat; additional truncated
 recordings are enumerated in README.
 
-The root sidecar describes 128 EEG channels, 1000 Hz, Fz reference and a 280 Hz
-lowpass. The NEMAR measured channel-count summary is 127. Determine actual recorded
-channels from each recording/header before choosing model inputs; do not invent a
-128th recorded channel or treat a reference reconstruction as acquisition data.
+The cap has 128 electrodes; 127 are recorded. Every BrainVision header lists 127
+channels (NumberOfChannels=127), and the 128th electrode, Fz, is the online
+reference ("Reference Channel Name = Fz" in 766 of the 768 headers; the other two
+headers end before the amplifier-setup block). The root sidecar said
+`EEGChannelCount` 128, counting the reference; it now says 127, which agrees with
+the recordings, the channels.tsv files and the NEMAR measured summary.
+`EEGReference` stays Fz. Do not reconstruct Fz as a recorded channel.
 Any filtering, resampling, rereferencing, frame sampling or feature generation is
 a versioned derivative with its own provenance, not a raw BIDS conversion.
 
@@ -84,7 +87,9 @@ assessment; transformation alone does not establish redistribution permission.
 The source release has no `channels.tsv`. This enrichment adds one per EEG run
 (768 files) with `name`, `type`, `units` and `status`, in the order of the
 BrainVision header (127 channels, µV, as recorded). Channel names, order and units
-were checked against the headers. Nothing in the recordings is changed:
+were checked against the headers of all 768 runs, and the rule below was
+recomputed from the signal of all 768 runs: `code/check_channels.py` does both
+(`--headers-only` for the first). Nothing in the recordings is changed:
 `status` only flags channels; no channel is dropped, interpolated or rescaled.
 
 88 channel-runs in 74 runs are `bad` under rule `emd-bads-v1`, judged over the

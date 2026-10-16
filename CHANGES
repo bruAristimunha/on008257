@@ -8,6 +8,10 @@
   - README: the EMD citation (title and DOI placeholders filled), the subject-3 eye-tracking calibration note of upstream 1.0.1, a pointer to REUSE_METADATA.md.
   - Added REUSE_METADATA.md: source and archive identity (recordings unchanged from OpenNeuro 1.0.0; upstream 1.0.1 changes only CHANGES, README and dataset_description.json), event-stimulus join, annotation provenance, caveats, stimulus access, channel status.
   - Added one *_channels.tsv per EEG run (768 files; the source has none): name, type, units, status, status_description in BrainVision header order; 88 channel-runs in 74 runs marked bad under rule emd-bads-v1 (see REUSE_METADATA.md).
+  - task-video_eeg.json: EEGChannelCount 128 -> 127. The headers list 127 recorded channels; the 128th electrode, Fz,
+    is the online reference (EEGReference Fz, unchanged).
+  - Added code/check_channels.py: checks every channels.tsv against its BrainVision header and recomputes rule
+    emd-bads-v1 from the signal.
   - dataset_description.json: Version 1.0.0 -> 1.0.1.
 
 1.0.0 2026-08-26

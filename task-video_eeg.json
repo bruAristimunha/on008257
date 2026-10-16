@@ -8,7 +8,7 @@
             "MaximumFrequency": 280
         }
     },
-    "EEGChannelCount": 128,
+    "EEGChannelCount": 127,
     "ECGChannelCount": 0,
     "EMGChannelCount": 0,
     "EOGChannelCount": 0,
